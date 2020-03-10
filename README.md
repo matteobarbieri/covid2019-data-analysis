@@ -1,5 +1,8 @@
-# 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE
+## IMPORTANT
 
+Data come from this repo: https://github.com/CSSEGISandData/COVID-19.git, if you want to be sure to have the latest data please add that one as a remote for the **master** branch (and then merge on the **notebooks** branch)!
+
+# 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE
 
 This is the data repository for the 2019 Novel Coronavirus Visual Dashboard operated by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). Also, Supported by ESRI Living Atlas Team and the Johns Hopkins University Applied Physics Lab (JHU APL).
 
