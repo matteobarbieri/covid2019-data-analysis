@@ -1,51 +1,41 @@
-## IMPORTANT
+# COVID-2019 data analysis
+
+In this repo I use a jupyter notebook to plot latest data available from health organizations around the world (See Section [Data source](#Data-source) for more information on the origin of data) and include a simple model which fits an exponential curve to the data.
+
+I'm updating this repository every morning at around 8:30 (CET time).
+
+## Data source
 
 Data come from this repo: https://github.com/CSSEGISandData/COVID-19.git, if you want to be sure to have the latest data please add that one as a remote for the **master** branch (and then merge on the **notebooks** branch)!
 
-# 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE
+## Plots
 
-This is the data repository for the 2019 Novel Coronavirus Visual Dashboard operated by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). Also, Supported by ESRI Living Atlas Team and the Johns Hopkins University Applied Physics Lab (JHU APL).
+Plots are generated automatically from the notebook.
 
-<br>
+### Daily data (Italy)
 
-<b>Visual Dashboard (desktop):</b><br>
-https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
-<br><br>
-<b>Visual Dashboard (mobile):</b><br>
-http://www.arcgis.com/apps/opsdashboard/index.html#/85320e2ea5424dfaaa75ae62e5c06e61
-<br><br>
-<b>Lancet Article:</b><br>
-[An interactive web-based dashboard to track COVID-19 in real time](https://doi.org/10.1016/S1473-3099(20)30120-1)
-<br><br>
-<b>Provided by Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE):</b><br>
-https://systems.jhu.edu/
-<br><br>
-<b>Data Sources:</b><br>
-* World Health Organization (WHO): https://www.who.int/ <br>
-* DXY.cn. Pneumonia. 2020. http://3g.dxy.cn/newh5/view/pneumonia.  <br>
-* BNO News: https://bnonews.com/index.php/2020/02/the-latest-coronavirus-cases/  <br>
-* National Health Commission of the People’s Republic of China (NHC): <br>
- http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml <br>
-* China CDC (CCDC): http://weekly.chinacdc.cn/news/TrackingtheEpidemic.htm <br>
-* Hong Kong Department of Health: https://www.chp.gov.hk/en/features/102465.html <br>
-* Macau Government: https://www.ssm.gov.mo/portal/ <br>
-* Taiwan CDC: https://sites.google.com/cdc.gov.tw/2019ncov/taiwan?authuser=0 <br>
-* US CDC: https://www.cdc.gov/coronavirus/2019-ncov/index.html <br>
-* Government of Canada: https://www.canada.ca/en/public-health/services/diseases/coronavirus.html <br>
-* Australia Government Department of Health: https://www.health.gov.au/news/coronavirus-update-at-a-glance <br>
-* European Centre for Disease Prevention and Control (ECDC): https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases 
-* Ministry of Health Singapore (MOH): https://www.moh.gov.sg/covid-19
-* Italy Ministry of Health: http://www.salute.gov.it/nuovocoronavirus
+![Daily data (Italy)](notebooks/daily_data.png)
 
-<br>
-<b>Additional Information about the Visual Dashboard:</b><br>
-https://systems.jhu.edu/research/public-health/ncov/
-<br><br>
+### Estimate of new cases in the near future (Italy)
 
-<b>Contact Us: </b><br>
-* Email: jhusystems@gmail.com
-<br><br>
+![Estimate of new cases in the near future (Italy)](notebooks/confirmed_cases_prediction.png)
 
-<b>Terms of Use:</b><br>
+### Estimate number of people requiring Intensive Care (Italy)
 
-This GitHub repo and its contents herein, including all data, mapping, and analysis, copyright 2020 Johns Hopkins University, all rights reserved, is provided to the public strictly for educational and academic research purposes.  The Website relies upon publicly available data from multiple sources, that do not always agree. The Johns Hopkins University hereby disclaims any and all representations and warranties with respect to the Website, including accuracy, fitness for use, and merchantability.  Reliance on the Website for medical guidance or use of the Website in commerce is strictly prohibited.
+Aside from the raw number of people being hospitalized because of the disease, an important aspect is the number of people who will require to be intubated or receive specialized, life-saving treatment in Intensive Care (IC) which requires instruments which are very limited in number.
+
+This plot assumes that 10% of all infected people will require such treatment. The red dashed horizontal line represents the country's capacity for those treatment. Once it's saturated people will no longer be able to receive the appropriate treatment, and the death toll will most likely increase dramatically.
+
+![Estimate of number of patients requiring IC (Italy)](notebooks/IC_estimates.png)
+
+![Estimate of number of patients requiring IC, logscale (Italy)](notebooks/IC_estimates_logscale.png)
+
+### Europe data, with dates aligned
+
+In the plot below I adjusted the dates of Italy, the country where first the virus started to spread significantly, Sweden and Norway in order to show the similarities between the trends in those and other european countries.
+
+Data from Italy has been "delayed" by 9 days and truncated (the latest data is omitted in order to improve the other lines' visibility and the plot overall's interpretability). The situation you see in Spain, France and Germany is at the moment the same that was in Italy nine days ago.
+
+Data from Norway and Sweden has instead been "anticipated" by a few days (as if the trend had begun roughly at the same time of other countries).
+
+![Europe data, with dates aligned](notebooks/europe_aligned_dates.png)
