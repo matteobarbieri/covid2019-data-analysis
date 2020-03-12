@@ -1,5 +1,7 @@
 # COVID-2019 data analysis
 
+**Updated 12/03/2020**
+
 In this repo I use a jupyter notebook to plot latest data available from health organizations around the world (See Section [Data source](#Data-source) for more information on the origin of data) and include a simple model which fits an exponential curve to the data.
 
 I'm updating this repository every morning at around 8:30 (CET time).
