@@ -1,6 +1,6 @@
 # COVID-2019 data analysis
 
-**Updated 12/03/2020**
+**Updated 13/03/2020**
 
 In this repo I use a jupyter notebook to plot latest data available from health organizations around the world (See Section [Data source](#Data-source) for more information on the origin of data) and include a simple model which fits an exponential curve to the data.
 
@@ -41,3 +41,9 @@ Data from Italy has been "delayed" by 9 days and truncated (the latest data is o
 Data from Norway and Sweden has instead been "anticipated" by a few days (as if the trend had begun roughly at the same time of other countries).
 
 ![Europe data, with dates aligned](notebooks/europe_aligned_dates.png)
+
+### Daily % increase
+
+% of new cases with respect to the previous day for different countries in Europe, in the last 10 days. Dashed lines represent the average for each country.
+
+![Daily % increase](notebooks/europe_daily_increase_10days.png)
