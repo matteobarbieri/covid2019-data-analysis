@@ -47,3 +47,21 @@ Data from Norway and Sweden has instead been "anticipated" by a few days (as if 
 % of new cases with respect to the previous day for different countries in Europe, in the last 10 days. Dashed lines represent the average for each country.
 
 ![Daily % increase](notebooks/europe_daily_increase_10days.png)
+
+### Ratio of cases over number of tests
+
+It is difficult to assess the effectiveness of measures such as lockdown and
+overall social distancing, considering that the number of actual cases itself is
+hard to estimate with precision since it depends on several factors.
+
+An indicator that might be useful to shed some light on the actual progression
+of the outbreak is the ratio between the number of cases and the number of
+tests. The intuition behind this is the increase of number of new cases is not
+only due to the actual spread of the disease but also significantly to how many
+people are tested. While not exact, since only people who have a reason to
+suspect that they have been infected are tested, and not the general population,
+the downward slope of the last few days in Italy for the hardest hit regions 
+seems to suggest that the measures taken the 8th and 9th of March are starting
+to yield positive effects.
+
+![Daily % increase](notebooks/cases_over_tests_ratio_italy.png)
