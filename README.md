@@ -16,11 +16,11 @@ Plots are generated automatically from the notebook.
 
 ### Daily data (Italy)
 
-![Daily data (Italy)](notebooks/daily_data.png)
+![Daily data (Italy)](plots/daily_data.png)
 
 ### Estimate of new cases in the near future (Italy)
 
-![Estimate of new cases in the near future (Italy)](notebooks/confirmed_cases_prediction.png)
+![Estimate of new cases in the near future (Italy)](plots/confirmed_cases_prediction.png)
 
 ### Estimate number of people requiring Intensive Care (Italy)
 
@@ -28,9 +28,9 @@ Aside from the raw number of people being hospitalized because of the disease, a
 
 This plot assumes that 10% of all infected people will require such treatment. The red dashed horizontal line represents the country's capacity for those treatment. Once it's saturated people will no longer be able to receive the appropriate treatment, and the death toll will most likely increase dramatically.
 
-![Estimate of number of patients requiring IC (Italy)](notebooks/IC_estimates.png)
+![Estimate of number of patients requiring IC (Italy)](plots/IC_estimates.png)
 
-![Estimate of number of patients requiring IC, logscale (Italy)](notebooks/IC_estimates_logscale.png)
+![Estimate of number of patients requiring IC, logscale (Italy)](plots/IC_estimates_logscale.png)
 
 ### Europe data, with dates aligned
 
@@ -40,13 +40,13 @@ Data from Italy has been "delayed" by 9 days and truncated (the latest data is o
 
 Data from Norway and Sweden has instead been "anticipated" by a few days (as if the trend had begun roughly at the same time of other countries).
 
-![Europe data, with dates aligned](notebooks/europe_aligned_dates.png)
+![Europe data, with dates aligned](plots/europe_aligned_dates.png)
 
 ### Daily % increase
 
 % of new cases with respect to the previous day for different countries in Europe, in the last 10 days. Dashed lines represent the average for each country.
 
-![Daily % increase](notebooks/europe_daily_increase_10days.png)
+![Daily % increase](plots/europe_daily_increase_10days.png)
 
 ### Ratio of cases over number of tests
 
@@ -64,4 +64,4 @@ the downward slope of the last few days in Italy for the hardest hit regions
 seems to suggest that the measures taken the 8th and 9th of March are starting
 to yield positive effects.
 
-![Daily % increase](notebooks/cases_over_tests_ratio_italy.png)
+![Daily % increase](plots/cases_over_tests_ratio_italy.png)
