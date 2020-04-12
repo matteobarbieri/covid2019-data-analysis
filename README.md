@@ -8,7 +8,7 @@ I'm updating this repository every morning at around 8:30 (CET time).
 
 ## Data source
 
-Data come from this repo: https://github.com/CSSEGISandData/COVID-19.git, if you want to be sure to have the latest data please add that one as a remote for the **master** branch (and then merge on the **notebooks** branch)!
+Data for all countries come from this repo: https://github.com/CSSEGISandData/COVID-19.git, which is included as a submodule in folder `data-world`. Data for italian regions is included in submodule `data-ita` (remote repo https://github.com/pcm-dpc/COVID-19.git. Make sure to clone recursively both submodules.
 
 ## Plots
 
