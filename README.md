@@ -18,10 +18,6 @@ Plots are generated automatically from the notebook.
 
 ![Daily data (Italy)](plots/daily_data.png)
 
-### Estimate of new cases in the near future (Italy)
-
-![Estimate of new cases in the near future (Italy)](plots/confirmed_cases_prediction.png)
-
 ### Estimate number of people requiring Intensive Care (Italy)
 
 Aside from the raw number of people being hospitalized because of the disease, an important aspect is the number of people who will require to be intubated or receive specialized, life-saving treatment in Intensive Care (IC) which requires instruments which are very limited in number.
