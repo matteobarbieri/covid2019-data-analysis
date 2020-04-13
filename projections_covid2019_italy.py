@@ -136,7 +136,7 @@ regions_list = [
 
 # In[47]:
 
-
+plt.figure()
 ax = plt.gca()
 
 sns.set_style("whitegrid", {'grid.linestyle': ':'})
@@ -187,6 +187,7 @@ top10_hit_regions = country_df[country_df['Date'] == latest_date]     .sort_valu
 # In[50]:
 
 
+plt.figure()
 ax = plt.gca()
 
 sns.set_style("whitegrid", {'grid.linestyle': ':'})
@@ -213,6 +214,7 @@ plt.savefig(os.path.join(PLOTS_DIR, "cases_over_tests_ratio_italy.png"));
 # In[51]:
 
 
+plt.figure()
 ax = plt.gca()
 
 sns.set_style("whitegrid", {'grid.linestyle': ':'})

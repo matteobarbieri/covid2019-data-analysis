@@ -215,6 +215,7 @@ Y_GRID_TICK = 10**int(np.log10(country_df['Confirmed'].max()))/2
 # In[53]:
 
 
+plt.figure()
 ax = plt.gca()
 
 sns.set_style("whitegrid", {'grid.linestyle': ':'})
@@ -327,6 +328,7 @@ df_estimates['Predictions IC (weighted)'] = df_estimates['Predictions (weighted)
 # In[60]:
 
 
+plt.figure()
 ax = plt.gca()
 
 country_df.plot(x='Date', y=["Confirmed_IC"], figsize=(20,10), ax=ax, marker='o')
@@ -362,6 +364,7 @@ plt.savefig(os.path.join(PLOTS_DIR, "IC_estimates.png"));
 # In[61]:
 
 
+plt.figure()
 ax = plt.gca()
 
 country_df.plot(x='Date', y=["Confirmed_IC"], figsize=(20,10), ax=ax, marker='o')
@@ -393,6 +396,7 @@ plt.savefig(os.path.join(PLOTS_DIR, "IC_estimates_logscale.png"));
 # In[62]:
 
 
+plt.figure()
 ax = plt.gca()
 
 sns.set_style("whitegrid", {'grid.linestyle': ':'})
@@ -491,6 +495,7 @@ daily_increase_df['Increase_p'] = (daily_increase_df['Increase'] - 1) * 100
 # In[65]:
 
 
+plt.figure()
 ax = plt.gca()
 
 sns.set_style("whitegrid", {'grid.linestyle': ':'})
