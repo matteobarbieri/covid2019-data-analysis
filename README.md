@@ -30,11 +30,9 @@ This plot assumes that 10% of all infected people will require such treatment. T
 
 ### Europe data, with dates aligned
 
-In the plot below I adjusted the dates of Italy, the country where first the virus started to spread significantly, Sweden and Norway in order to show the similarities between the trends in those and other european countries.
-
-Data from Italy has been "delayed" by 9 days and truncated (the latest data is omitted in order to improve the other lines' visibility and the plot overall's interpretability). The situation you see in Spain, France and Germany is at the moment the same that was in Italy nine days ago.
-
-Data from Norway and Sweden has instead been "anticipated" by a few days (as if the trend had begun roughly at the same time of other countries).
+In order to try and give a fair comparison on how the disease is spreading, I
+plotted the number of confirmed cases starting for each country from the date
+when such number had crossed a threshold (arbitrarily set at 200).
 
 ![Europe data, with dates aligned](plots/europe_aligned_dates.png)
 
