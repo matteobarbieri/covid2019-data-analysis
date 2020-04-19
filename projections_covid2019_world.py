@@ -397,68 +397,42 @@ plt.savefig(os.path.join(PLOTS_DIR, "IC_estimates_logscale.png"));
 
 
 plt.figure()
+
 ax = plt.gca()
 
 sns.set_style("whitegrid", {'grid.linestyle': ':'})
 # ax.yaxis.set_major_locator(ticker.MultipleLocator(Y_GRID_TICK/5))
 ax.xaxis.set_major_locator(ticker.MultipleLocator(3))
-ax.xaxis.set_major_formatter(mdates.DateFormatter('%d-%m-%Y'))
 
 
 countries_to_plot = [
-#     "Italy",
+    "Italy",
     "Spain",
     "France",
     "Germany",
-#     "Norway",
-#     "Sweden",
+    "Norway",
+    "Sweden",
+    "Denmark",
+    "Finland",
 ]
 
 for cc in countries_to_plot:
     c_df = get_country_df(world_df, cc)
-    c_df = c_df[c_df['Date'] > datetime(2020, 2,14).date()]
+    first_day_200 = c_df[c_df["Confirmed"] >= 200]
+    starting_date = first_day_200.iloc[0]['Date']
+    
+    c_df_shifted = c_df[c_df["Date"] >= starting_date].copy()
+    c_df_shifted = c_df_shifted.reset_index(drop=True)
+    
+    c_df_shifted.plot(y=["Confirmed"], figsize=(20,10), ax=ax, marker='o', alpha=0.5)
 
-    c_df.plot(x='Date', y=["Confirmed"], figsize=(20,10), ax=ax, marker='o', alpha=0.2)
-    pass
+ax.legend(countries_to_plot);
+ax.set_ylabel("# of confirmed cases");
+ax.set_ylabel("Days from N >= 200");
 
-italy_delayed = get_country_df(world_df, "Italy")
-italy_delayed = italy_delayed.iloc[:-9,:]
-
-spain_df = get_country_df(world_df, "Spain")
-italy_delayed['Date'] = list(spain_df[spain_df['Date'] >= datetime(2020, 2, 9).date()]['Date'])
-
-# Update date dynamically
-end_date_skandinavia = (datetime.today() - timedelta(days=6)).date().strftime("%m-%d-%Y")
-# end_date_skandinavia = (datetime.today() - timedelta(days=20)).date().strftime("%m-%d-%Y")
-
-norway_anticipated = get_country_df(world_df, "Norway")
-norway_anticipated['Date'] = pd.date_range(end=end_date_skandinavia, periods=len(norway_anticipated))
-
-sweden_anticipated = get_country_df(world_df, "Sweden")
-sweden_anticipated['Date'] = pd.date_range(end=end_date_skandinavia, periods=len(sweden_anticipated))
-
-# Plot adjusted countries
-italy_delayed = italy_delayed[italy_delayed['Date'] > datetime(2020, 2,14).date()]
-italy_delayed.plot(x='Date', y=["Confirmed"], figsize=(20,10), ax=ax, marker='x', ls="--")
-
-norway_anticipated = norway_anticipated[norway_anticipated['Date'] > "2020-02-14"]
-sweden_anticipated = sweden_anticipated[sweden_anticipated['Date'] > "2020-02-14"]
-
-norway_anticipated.plot(x='Date', y=["Confirmed"], figsize=(20,10), ax=ax, marker='x')
-sweden_anticipated.plot(x='Date', y=["Confirmed"], figsize=(20,10), ax=ax, marker='x')
-
-ax.legend(countries_to_plot + ['Italy (delayed)', 'Norway (anticipated)', 'Sweden (anticipated)'])
-ax.set_ylabel("# of confirmed cases")
-
-plt.title("Date-aligned data");
+plt.title("Aligned data from start of outbreak");
 
 plt.savefig(os.path.join(PLOTS_DIR, "europe_aligned_dates.png"));
-
-
-# In[63]:
-
-
-get_country_df(world_df, "Spain").tail()
 
 
 # In[64]:
