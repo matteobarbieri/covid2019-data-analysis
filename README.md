@@ -38,12 +38,6 @@ Data from Norway and Sweden has instead been "anticipated" by a few days (as if 
 
 ![Europe data, with dates aligned](plots/europe_aligned_dates.png)
 
-### Daily % increase
-
-% of new cases with respect to the previous day for different countries in Europe, in the last 10 days. Dashed lines represent the average for each country.
-
-![Daily % increase](plots/europe_daily_increase_10days.png)
-
 ### Ratio of cases over number of tests
 
 It is difficult to assess the effectiveness of measures such as lockdown and
