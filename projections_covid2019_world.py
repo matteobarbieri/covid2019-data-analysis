@@ -125,17 +125,33 @@ countries_parameters = dict()
 
 countries_parameters['Italy'] = {
     'ESTIMATED_IC_CAPACITY': 5000,
-    'START_DATE': datetime(2020, 2, 23).date()
+    'START_DATE': datetime(2020, 3, 8).date()
 }
 
 countries_parameters['Sweden'] = {
     'ESTIMATED_IC_CAPACITY': 1000,
-    'START_DATE': datetime(2020, 2, 29).date()
+    'START_DATE': datetime(2020, 2, 29).date(),
+    'Population': 10.23
 }
 
 countries_parameters['United Kingdom'] = {
     'ESTIMATED_IC_CAPACITY': 5000,
     'START_DATE': datetime(2020, 3, 12).date()
+}
+
+countries_parameters['Denmark'] = {
+    'ESTIMATED_IC_CAPACITY': 5000,
+    'Population': 5.806
+}
+
+countries_parameters['Norway'] = {
+    'ESTIMATED_IC_CAPACITY': 5000,
+    'Population': 5.368
+}
+
+countries_parameters['Finland'] = {
+    'ESTIMATED_IC_CAPACITY': 5000,
+    'Population': 5.518
 }
 
 # countries_parameters['United Kingdom'] = {
@@ -434,6 +450,55 @@ plt.title("Aligned data from start of outbreak");
 
 plt.savefig(os.path.join(PLOTS_DIR, "europe_aligned_dates.png"));
 
+
+# plt.figure()
+
+# fig, (ax1, ax2) = plt.subplots((1, 2))
+fig, (ax1, ax2) = plt.subplots(1, 2)
+
+# ax = plt.gca()
+
+
+sns.set_style("whitegrid", {'grid.linestyle': ':'})
+# ax.yaxis.set_major_locator(ticker.MultipleLocator(Y_GRID_TICK/5))
+
+countries_to_plot = [
+    "Denmark",
+    "Finland",
+    "Norway",
+    "Sweden",
+]
+
+for cc in countries_to_plot:
+    c_df = get_country_df(world_df, cc)
+    c_df = c_df[c_df['Date'] > datetime(2020, 3, 2).date()]
+    
+    c_df['Confirmed_normalized'] = c_df['Confirmed']/countries_parameters[cc]['Population']
+    c_df['Deaths_normalized'] = c_df['Deaths']/countries_parameters[cc]['Population']
+    
+    c_df.plot(x='Date', y=["Confirmed_normalized"], figsize=(30,10), ax=ax1, marker='o')
+    c_df.plot(x='Date', y=["Deaths_normalized"], figsize=(30,10), ax=ax2, marker='o')
+    pass
+
+
+ax1.legend(countries_to_plot)
+ax2.legend(countries_to_plot)
+
+ax1.xaxis.set_major_locator(ticker.MultipleLocator(6))
+ax1.xaxis.set_major_formatter(mdates.DateFormatter('%d-%m-%Y'))
+
+
+ax2.xaxis.set_major_locator(ticker.MultipleLocator(6))
+ax2.xaxis.set_major_formatter(mdates.DateFormatter('%d-%m-%Y'))
+
+
+# ax1.set_ylabel("# of confirmed cases")
+
+# plt.title("4 major nordic countries");
+ax1.set_title("# of confirmed cases (per 1M people)");
+ax2.set_title("# of deaths (per 1M people)");
+
+plt.savefig(os.path.join(PLOTS_DIR, "nordic_countries.png"));
 
 # In[64]:
 
