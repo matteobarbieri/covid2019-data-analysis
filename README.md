@@ -18,16 +18,6 @@ Plots are generated automatically from the notebook.
 
 ![Daily data (Italy)](plots/daily_data.png)
 
-### Estimate number of people requiring Intensive Care (Italy)
-
-Aside from the raw number of people being hospitalized because of the disease, an important aspect is the number of people who will require to be intubated or receive specialized, life-saving treatment in Intensive Care (IC) which requires instruments which are very limited in number.
-
-This plot assumes that 10% of all infected people will require such treatment. The red dashed horizontal line represents the country's capacity for those treatment. Once it's saturated people will no longer be able to receive the appropriate treatment, and the death toll will most likely increase dramatically.
-
-![Estimate of number of patients requiring IC (Italy)](plots/IC_estimates.png)
-
-![Estimate of number of patients requiring IC, logscale (Italy)](plots/IC_estimates_logscale.png)
-
 ### Europe data, with dates aligned
 
 In order to try and give a fair comparison on how the disease is spreading, I
